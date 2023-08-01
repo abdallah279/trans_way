@@ -3372,6 +3372,7 @@ html[lang=ar] .page-navbar .navbar-content .nav-icons .nav-ic.bell::after {
 
 .footer {
   padding-top: 40px;
+  background-color: rgba(247, 247, 255, 0.5);
   position: relative;
 }
 .footer .footer_bg {
