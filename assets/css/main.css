@@ -3126,7 +3126,7 @@ html[lang=ar] .pagination .page-item:last-child .page-link {
 }
 
 .page-navbar {
-  padding: 22px 0;
+  padding: 10px 0;
   position: fixed;
   top: -1;
   left: 0;
@@ -3354,6 +3354,9 @@ html[lang=ar] .page-navbar .navbar-content .nav-icons .nav-ic.bell::after {
   box-shadow: 0 0 5px 0 rgba(37, 33, 34, 0.1);
   background-color: #fff;
 }
+.page-navbar.scroll .navbar-content .logo .logo-img {
+  max-height: 65px;
+}
 .page-navbar.scroll .navbar-content .links .link {
   color: #252122;
 }
@@ -3480,9 +3483,10 @@ html[lang=ar] .footer .foot-content .footer-links .link:hover {
   color: #252122;
 }
 
+/********************* Start Home section *********************/
 .home-sec {
   position: relative;
-  height: 720px;
+  height: 600px;
 }
 .home-sec::after {
   content: "";
@@ -3517,7 +3521,7 @@ html[lang=ar] .footer .foot-content .footer-links .link:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 24px;
 }
 .home-sec .content-container .content .title {
   font-size: 28px;
@@ -3542,11 +3546,54 @@ html[lang=ar] .footer .foot-content .footer-links .link:hover {
 }
 .home-sec .home-slider .home-img {
   width: 100%;
-  height: 720px;
+  height: 600px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
+/********************* End Home section *********************/
+/********************* Strat Facts section *********************/
+.facts-sec {
+  position: relative;
+  margin-top: -85px;
+  margin-bottom: 30px;
+}
+.facts-sec .facts-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 72px 60px;
+  width: calc(100% - 200px);
+  margin: auto;
+}
+.facts-sec .facts-cards .fact-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 5px 0 rgba(37, 33, 34, 0.1);
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.3s ease;
+}
+.facts-sec .facts-cards .fact-card .fact-img {
+  max-width: 40px;
+}
+.facts-sec .facts-cards .fact-card .fact-num {
+  font-size: 28px;
+  color: #252122;
+}
+.facts-sec .facts-cards .fact-card .fact-text {
+  font-size: 17px;
+  color: #2898c6;
+}
+.facts-sec .facts-cards .fact-card:hover {
+  transform: translateY(-10px);
+}
+
+/********************* End Facts section *********************/
+/********************* Start offers section *********************/
 .offers-slider {
   width: calc(100% - 200px);
   margin: auto;
@@ -3639,8 +3686,35 @@ html[lang=ar] .offer-card .offer-img::after {
           clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 }
 
+/********************* End Services section *********************/
+/********************* Start Services section *********************/
+.services-slider {
+  position: relative;
+}
 .services-slider .owl-stage-outer {
   padding: 10px 0;
+}
+.services-slider .owl-prev,
+.services-slider .owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #2898c6 !important;
+  background-color: #2898c6 !important;
+  color: #fff !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px !important;
+}
+.services-slider .owl-prev {
+  right: -55px;
+}
+.services-slider .owl-next {
+  left: -55px;
 }
 
 .service-box {
@@ -3718,4 +3792,57 @@ html[lang=en] .service-box:hover::after {
 }
 html[lang=ar] .service-box:hover::after {
   right: 0 !important;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/********************* End Services section *********************/
+/********************* Start brand section *********************/
+.clients-slider .owl-stage-outer {
+  padding: 20px 0;
+}
+
+.client-item {
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(37, 33, 34, 0.1);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  border-radius: 12px;
+  position: relative;
+}
+.client-item::after, .client-item::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #f7f7ff;
+  z-index: -1;
+}
+.client-item::after {
+  top: -8px;
+}
+html[lang=en] .client-item::after {
+  right: -8px;
+}
+html[lang=ar] .client-item::after {
+  left: -8px;
+}
+.client-item::before {
+  bottom: -8px;
+}
+html[lang=en] .client-item::before {
+  left: -8px;
+}
+html[lang=ar] .client-item::before {
+  right: -8px;
+}
+
+.brand-img {
+  max-width: 80px;
+  max-height: 75px;
+}
+
+/********************* End brand section *********************//*# sourceMappingURL=main.css.map */

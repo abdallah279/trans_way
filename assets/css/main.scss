@@ -1,10 +1,12 @@
 @import "sass/variables", "sass/mixins", "sass/global", "sass/components",
   "sass/navbar", "sass/footer";
 
-// Home Section
+
+/********************* Start Home section *********************/
+
 .home-sec {
   position: relative;
-  height: 720px;
+  height: 600px;
 
   &::after {
     content: "";
@@ -34,7 +36,7 @@
       display: flex;
       align-items: center;
       flex-direction: column;
-      gap: 30px;
+      gap: 24px;
 
       .title {
         font-size: 28px;
@@ -63,13 +65,64 @@
     .home-img {
       width: 100%;
       // height: 100%;
-      height: 720px;
+      height: 600px;
       object-fit: cover;
     }
   }
 }
 
-// offer-card
+/********************* End Home section *********************/
+
+
+
+/********************* Strat Facts section *********************/
+.facts-sec{
+  position: relative;
+  margin-top: -85px;
+  margin-bottom: 30px;
+
+  .facts-cards{
+    @include grid(300px, 60px);
+    width: calc(100% - 200px);
+    margin: auto;
+
+    .fact-card{
+      background-color: $white;
+      border-radius: 12px;
+      box-shadow: $main-shadow;
+      padding: 25px;
+      @include center;
+      flex-direction: column;
+      gap: 14px;
+      transition: $main-transition;
+
+      .fact-img{
+        max-width: 40px;
+      }
+
+      .fact-num{
+        font-size: 28px;
+        // font-family: fontDemi;
+        color: $black;
+      }
+
+      .fact-text{
+        font-size: 17px;
+        color: $main;
+      }
+
+      &:hover{
+        transform: translateY(-10px);
+      }
+    }
+  }
+}
+/********************* End Facts section *********************/
+
+
+
+
+/********************* Start offers section *********************/
 
 .offers-slider {
   width: calc(100% - 200px);
@@ -155,6 +208,7 @@
       height: 100%;
       background-color: $main;
     }
+
     .img {
       width: 100%;
       height: 100%;
@@ -164,11 +218,38 @@
   }
 }
 
-// Services
+/********************* End Services section *********************/
+
+
+
+/********************* Start Services section *********************/
 
 .services-slider {
+  position: relative;
+
   .owl-stage-outer {
     padding: 10px 0;
+  }
+
+  .owl-prev,
+  .owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include circle(40px);
+    border: 1px solid $main !important;
+    background-color: $main !important;
+    color: $white !important;
+    @include center;
+    font-size: 16px !important;
+  }
+
+  .owl-prev {
+    right: -55px;
+  }
+
+  .owl-next {
+    left: -55px;
   }
 }
 
@@ -179,6 +260,7 @@
   border-radius: 8px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   position: relative;
+  // background-color: $sec;
 
   &::after {
     content: "";
@@ -246,3 +328,50 @@
     }
   }
 }
+
+/********************* End Services section *********************/
+
+
+
+/********************* Start brand section *********************/
+
+.clients-slider{
+  .owl-stage-outer{
+    padding: 20px 0;
+  }
+}
+.client-item{
+  background-color: $white;
+  box-shadow: $main-shadow;
+  padding: 15px 20px;
+  @include center;
+  width: 200px;
+  height: 100px;
+  border-radius: 12px;
+  position: relative;
+
+  &::after, &::before{
+    content: '';
+    position: absolute;
+    @include circle(40px);
+    background-color: $sec;
+    z-index: -1;
+  }
+
+  &::after{
+    top: -8px;
+    @include dir-right(-8px);
+  }
+
+  &::before{
+    bottom: -8px;
+    @include dir-left(-8px);
+  }
+}
+
+.brand-img {
+  max-width: 80px;
+  max-height: 75px;
+}
+
+/********************* End brand section *********************/

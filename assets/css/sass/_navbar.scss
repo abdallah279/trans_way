@@ -1,6 +1,6 @@
 
 .page-navbar{
-    padding: 22px 0;
+    padding: 10px 0;
     position: fixed;
     top: -1;
     left: 0;
@@ -213,6 +213,12 @@
         background-color: $white;
 
         .navbar-content{
+            .logo{
+                .logo-img{
+                    max-height: 65px;
+                }
+            }
+
             .links{
                 .link{
                     color: $black;
