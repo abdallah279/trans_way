@@ -288,12 +288,8 @@
     background-color: $main !important;
     border: 2px solid $white !important;
 
-    // &:hover{
-    //   color: $main !important;
-    // }
-
-    @media screen and (max-width: $screen-lg) {
-      display: none;
+    @media screen and (max-width:$screen-sm) {
+      display: none !important;
     }
   }
 
