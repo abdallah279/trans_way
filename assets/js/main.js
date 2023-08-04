@@ -4,146 +4,190 @@ $(window).on("load", function () {
 });
 
 // Header Fixed
-let header = document.querySelector('.page-navbar');
-header.classList.toggle('scroll', window.scrollY > 48);
+let header = document.querySelector(".page-header-con");
+header.classList.toggle("scroll", window.scrollY > 48);
 
-window.addEventListener('scroll', function(){
-  header.classList.toggle('scroll', window.scrollY > 48);
+window.addEventListener("scroll", function () {
+  header.classList.toggle("scroll", window.scrollY > 48);
 });
 
 // Active Link
 $(".page-navbar .links .link").each(function () {
-  $(this).removeClass('active')
+  $(this).removeClass("active");
   if (window.location.href.includes($(this).attr("href"))) {
     $(this).addClass("active");
   }
 });
 
 // Show And Hide Search Navbar
-$('.nav-search-ic').on('click', function(){
-$('.nav-search').toggleClass('open');
+$(".nav-search-ic").on("click", function () {
+  $(".nav-search").toggleClass("open");
 });
-
 
 // SideBar
-$('.side-open').on('click', function(){
-$('.links').addClass('active');
-$('.overlay-m').fadeIn(600);
+$(".side-open").on("click", function () {
+  $(".links").addClass("active");
+  $(".overlay-m").fadeIn(600);
 });
 
-$('.side-user-open').on('click', function(){
-$('.sidebar').addClass('active');
-$('.overlay-m').fadeIn(600);
+$(".side-user-open").on("click", function () {
+  $(".sidebar").addClass("active");
+  $(".overlay-m").fadeIn(600);
 });
 
-$('.close').on('click', function(){
-$('.links').removeClass('active');
-$('.overlay-m').fadeOut(500);
+$(".close").on("click", function () {
+  $(".links").removeClass("active");
+  $(".overlay-m").fadeOut(500);
 });
 
-$('.overlay-m').on('click', function(){
-$('.links').removeClass('active');
-$('.sidebar').removeClass('active');
-$(this).fadeOut(500);
+$(".overlay-m").on("click", function () {
+  $(".links").removeClass("active");
+  $(".sidebar").removeClass("active");
+  $(this).fadeOut(500);
 });
-
 
 // dropDown stopPropagation
-$(".dropdown-menu").click(function(e){
+$(".dropdown-menu").click(function (e) {
   e.stopPropagation();
 });
 
-
 // PassWord Show In Setting Page
-const iconsPassSet = document.querySelectorAll('.pass-icon');
+const iconsPassSet = document.querySelectorAll(".pass-icon");
 
-if(iconsPassSet){
-iconsPassSet.forEach((ic) =>{
-  ic.addEventListener('click', function(){
-    let input = ic.parentElement.querySelector('input');
-    showPassword(input, ic);
+if (iconsPassSet) {
+  iconsPassSet.forEach((ic) => {
+    ic.addEventListener("click", function () {
+      let input = ic.parentElement.querySelector("input");
+      showPassword(input, ic);
+    });
   });
-});
 }
 
 // Function To Show And Hide Password
-function showPassword(input, icon){
+function showPassword(input, icon) {
+  if (input.type == "password") {
+    input.setAttribute("type", "text");
+    // icon.innerHTML = `<i class="fa-regular fa-eye"></i>`;
+  } else {
+    input.setAttribute("type", "password");
+    // icon.innerHTML = `<i class="fa-regular fa-eye-slash"></i>`;
+  }
 
-if(input.type == 'password'){
-  input.setAttribute('type', 'text');
-  // icon.innerHTML = `<i class="fa-regular fa-eye"></i>`;
-} else{
-  input.setAttribute('type', 'password');
-  // icon.innerHTML = `<i class="fa-regular fa-eye-slash"></i>`;
-}
-
-icon.classList.toggle('show')
+  icon.classList.toggle("show");
 }
 
 let isRtl = $('html[lang="ar"]').length > 0;
 
 // Normal Select To
 $(".select").select2({
-dir: isRtl ? "rtl" : "ltr",
-minimumResultsForSearch: Infinity,
+  dir: isRtl ? "rtl" : "ltr",
+  minimumResultsForSearch: Infinity,
 });
 
-
-
 // Heart
-$(document).on('click', '.heart' ,function(){
-if($(this).find('i').hasClass('fa-regular')){
-  $(this).find('i').addClass('fa-solid c-yellow')
-  $(this).find('i').removeClass('fa-regular')
-} else{
-  $(this).find('i').removeClass('fa-solid c-yellow')
-  $(this).find('i').addClass('fa-regular')
-
-}
-})
-
+$(document).on("click", ".heart", function () {
+  if ($(this).find("i").hasClass("fa-regular")) {
+    $(this).find("i").addClass("fa-solid c-yellow");
+    $(this).find("i").removeClass("fa-regular");
+  } else {
+    $(this).find("i").removeClass("fa-solid c-yellow");
+    $(this).find("i").addClass("fa-regular");
+  }
+});
 
 // $('[data-pass]').on('click', function(){
 // let item = $(this).attr('data-pass')
 // sessionStorage.setItem("activeTab", JSON.stringify(item));
 // })
 
-let allCopy = document.querySelectorAll('.circle')
+let allCopy = document.querySelectorAll(".circle");
 
-if(allCopy){
-  allCopy.forEach(el => {
-    el.addEventListener('click', function(){
-        let code = el.closest('.copy-item').querySelector('.copy-num');
-        CopyToClipboard(code);
+if (allCopy) {
+  allCopy.forEach((el) => {
+    el.addEventListener("click", function () {
+      let code = el.closest(".copy-item").querySelector(".copy-num");
+      CopyToClipboard(code);
     });
-  })
+  });
 }
-
 
 function CopyToClipboard(id) {
   var r = document.createRange();
   r.selectNode(id);
   window.getSelection().removeAllRanges();
   window.getSelection().addRange(r);
-  document.execCommand('copy');
+  document.execCommand("copy");
   window.getSelection().removeAllRanges();
 }
 
-
 // Input Number
-$(document).ready(function() {
-  $('.minus').click(function () {
-    var $input = $(this).parent().find('input');
+$(document).ready(function () {
+  $(".minus").click(function () {
+    var $input = $(this).parent().find("input");
     var count = parseInt($input.val()) - 1;
     count = count < 1 ? 1 : count;
     $input.val(count);
     $input.change();
     return false;
   });
-  $('.plus').click(function () {
-    var $input = $(this).parent().find('input');
+  $(".plus").click(function () {
+    var $input = $(this).parent().find("input");
     $input.val(parseInt($input.val()) + 1);
     $input.change();
     return false;
+  });
+});
+
+$(".cards-slider").each(function () {
+  $(this).owlCarousel({
+    items: 1,
+    rtl: isRtl,
+    autoplaySpeed: 3000,
+    autoplayTimeout: 5000,
+    smartSpeed: 2000,
+    autoplayHoverPause: false,
+    margin: 35,
+    loop: true,
+    dots: false,
+    nav: true,
+    autoplay: true,
+    navText: [
+      "<i class='fa-regular fa-hand-point-right'></i>",
+      "<i class='fa-regular fa-hand-point-left'></i>",
+    ],
+    responsive: {
+      1200: {
+        items: 4,
+      },
+      991: {
+        items: 3,
+      },
+      560: {
+        items: 2,
+        nav: false,
+      },
+    },
+  });
+
+  setTimeout(() => {
+    $(this).find(`.owl-stage-outer`).addClass("p-2");
+  }, 5);
+});
+
+$(".product-btn").each(function () {
+  $(this).on("click", function () {
+    var button = $(this);
+    var cart = $("#cart");
+    var cartTotal = cart.attr("data-totalitems");
+    var newCartTotal = parseInt(cartTotal) + 1;
+
+    button.addClass("sendtocart");
+    setTimeout(function () {
+      button.removeClass("sendtocart");
+      cart.addClass("shake").attr("data-totalitems", newCartTotal);
+      setTimeout(function () {
+        cart.removeClass("shake");
+      }, 500);
+    }, 1000);
   });
 });
