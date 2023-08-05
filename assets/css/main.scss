@@ -99,40 +99,10 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-    transition: 0.6s ease-in-out;
-
-    &::before,
-    &::after {
-      content: "";
-      display: block;
-      width: 50px;
-      height: 50px;
-      transform: translate(-50%, -50%);
-      position: absolute;
-      border-radius: 50%;
-      z-index: -1;
-      background-color: $white;
-      transition: 0.6s ease-in-out;
-    }
-
-    &::before {
-      top: -2em;
-      left: -2em;
-    }
-
-    &::after {
-      left: calc(100% + 2em);
-      top: calc(100% + 2em);
-    }
+    transition: $main-transition;
 
     &:hover {
       color: $main !important;
-
-      &::before,
-      &::after {
-        height: 450px;
-        width: 450px;
-      }
     }
 
     @media screen and (max-width: $screen-sm) {
@@ -167,12 +137,13 @@
 
     .product-name {
       font-size: 18px;
-      font-family: fontDemi;
+      // font-family: fontDemi;
+      font-weight: 700;
       display: -webkit-box;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      height: 23px;
+      height: 26px;
     }
 
     .product-subtitle {
@@ -184,7 +155,7 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      height: 50px;
+      height: 52px;
     }
 
     .product-footer {
@@ -257,12 +228,13 @@
 /********************* End Services section *********************/
 
 /********************* Start About section *********************/
+
 .about-sec {
   background-color: $sec;
   position: relative;
   overflow: hidden;
 
-  .bg_sec{
+  .bg_sec {
     position: absolute;
     top: 0;
     left: 0;
@@ -272,7 +244,7 @@
     object-fit: cover;
   }
 
-  .bg_sec2{
+  .bg_sec2 {
     position: absolute;
     top: -20px;
     left: 0;
@@ -302,24 +274,65 @@
         max-height: 90px;
       }
 
-      .about-title{
+      .about-title {
         font-size: 20px;
-        font-family: fontDemi;
+        font-weight: 700;
       }
 
-      .about-text{
+      .about-text {
         line-height: 26px;
       }
 
-      .main-btn{
+      .main-btn {
         width: fit-content;
       }
     }
   }
 }
+
 /********************* End About section *********************/
 
+/********************* Start text section *********************/
 
+.text-sec {
+  position: relative;
+  padding: 140px 0;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $black, $alpha: 0.7);
+    z-index: 1;
+  }
+
+  .background_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+
+  .brand-text {
+    text-align: center;
+    font-size: 32px;
+    color: $white;
+    position: relative;
+    z-index: 3;
+  }
+}
+
+/********************* End text section *********************/
 
 /********************* Start brand section *********************/
 
@@ -327,7 +340,7 @@
   .owl-stage-outer {
     padding: 20px 0;
 
-    .owl-item{
+    .owl-item {
       display: flex;
       align-items: center;
     }

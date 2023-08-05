@@ -171,6 +171,8 @@ $(".cards-slider").each(function () {
 
   setTimeout(() => {
     $(this).find(`.owl-stage-outer`).addClass("p-2");
+    $(this).find(`.owl-prev`).addClass("up");
+    $(this).find(`.owl-next`).addClass("up");
   }, 5);
 });
 
@@ -191,3 +193,7 @@ $(".product-btn").each(function () {
     }, 1000);
   });
 });
+
+
+let background = $('.text-sec').attr('data-background');
+$('.text-sec').css('background-image', `url(${background})`)

@@ -35,6 +35,7 @@
 /* Overlay */
 /* Grid */
 /* translate */
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap");
 * {
   border: 0;
   margin: 0;
@@ -82,6 +83,7 @@ html::-webkit-scrollbar-thumb {
 
 body {
   font-family: fontMed;
+  font-family: "Almarai", sans-serif;
   overflow-x: hidden;
 }
 html[lang=en] body {
@@ -849,7 +851,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 .main-title {
   color: #252122;
   font-size: 20px;
-  font-family: fontDemi;
+  font-weight: 700;
   margin: auto;
   position: relative;
   width: -moz-fit-content;
@@ -870,7 +872,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 .main-title::after {
   bottom: -17px;
   left: -10px;
-  background-color: #ffce2b;
+  background-color: #E6C145;
 }
 @media screen and (max-width: 425px) {
   .main-title {
@@ -880,8 +882,8 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 
 .sec-title {
   color: #252122;
-  font-size: 17px;
-  font-family: fontDemi;
+  font-size: 18px;
+  font-weight: 700;
   position: relative;
   width: -moz-fit-content;
   width: fit-content;
@@ -3379,7 +3381,7 @@ html[lang=ar] .page-header .header-content .nav-ic.cart:before {
 }
 .page-navbar .navbar-content .links .link {
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
 }
 @media screen and (max-width: 992px) {
   .page-navbar .navbar-content .links .link {
@@ -3705,41 +3707,11 @@ html[lang=ar] .cards-slider .owl-nav {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: 0.6s ease-in-out;
-}
-.cards-slider .owl-prev::before, .cards-slider .owl-prev::after,
-.cards-slider .owl-next::before,
-.cards-slider .owl-next::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 50px;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  border-radius: 50%;
-  z-index: -1;
-  background-color: #fff;
-  transition: 0.6s ease-in-out;
-}
-.cards-slider .owl-prev::before,
-.cards-slider .owl-next::before {
-  top: -2em;
-  left: -2em;
-}
-.cards-slider .owl-prev::after,
-.cards-slider .owl-next::after {
-  left: calc(100% + 2em);
-  top: calc(100% + 2em);
+  transition: all 0.3s ease;
 }
 .cards-slider .owl-prev:hover,
 .cards-slider .owl-next:hover {
   color: #2898c6 !important;
-}
-.cards-slider .owl-prev:hover::before, .cards-slider .owl-prev:hover::after,
-.cards-slider .owl-next:hover::before,
-.cards-slider .owl-next:hover::after {
-  height: 450px;
-  width: 450px;
 }
 @media screen and (max-width: 576px) {
   .cards-slider .owl-prev,
@@ -3773,12 +3745,12 @@ html[lang=ar] .cards-slider .owl-nav {
 }
 .product-card .product-content .product-name {
   font-size: 18px;
-  font-family: fontDemi;
+  font-weight: 700;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 23px;
+  height: 26px;
 }
 .product-card .product-content .product-subtitle {
   color: #252122;
@@ -3788,7 +3760,7 @@ html[lang=ar] .cards-slider .owl-nav {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 50px;
+  height: 52px;
 }
 .product-card .product-content .product-footer {
   display: flex;
@@ -3907,7 +3879,7 @@ html[lang=ar] .product-card:hover::after {
 }
 .about-sec .about-container .about-content .about-title {
   font-size: 20px;
-  font-family: fontDemi;
+  font-weight: 700;
 }
 .about-sec .about-container .about-content .about-text {
   line-height: 26px;
@@ -3918,6 +3890,44 @@ html[lang=ar] .product-card:hover::after {
 }
 
 /********************* End About section *********************/
+/********************* Start text section *********************/
+.text-sec {
+  position: relative;
+  padding: 140px 0;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+.text-sec::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 33, 34, 0.7);
+  z-index: 1;
+}
+.text-sec .background_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -2;
+}
+.text-sec .brand-text {
+  text-align: center;
+  font-size: 32px;
+  color: #fff;
+  position: relative;
+  z-index: 3;
+}
+
+/********************* End text section *********************/
 /********************* Start brand section *********************/
 .clients-slider .owl-stage-outer {
   padding: 20px 0;

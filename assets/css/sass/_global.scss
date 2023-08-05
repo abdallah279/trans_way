@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
 *{
     border: 0;
     margin: 0;
@@ -48,6 +50,7 @@ html::-webkit-scrollbar-thumb {
 
 body {
     font-family: fontMed;
+    font-family: 'Almarai', sans-serif;
     overflow-x: hidden;
     // background-color: $sec;
     
