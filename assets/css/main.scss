@@ -31,7 +31,7 @@
     }
   }
 
-  &.sm{
+  &.sm {
     height: 240px;
 
     .home-slider {
@@ -459,12 +459,399 @@
 
 /********************* End reviews section *********************/
 
-/********************* Start form section *********************/
-// .form-sec{
-//   background-color: $white;
-//   box-shadow: $main-shadow;
-//   border-radius: 15px;
+/********************* Start Cart section *********************/
 
-//   .form-style
-// }
-/********************* End form section *********************/
+// Code Inputs
+.code-inputs {
+  .main-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .input-me {
+      min-height: 42px !important;
+      border-radius: 5px;
+    }
+
+    .main-btn {
+      height: 42px;
+      border-radius: 5px;
+    }
+  }
+
+  &.lg {
+    .main-input {
+      .input-me {
+        min-height: 48px !important;
+      }
+
+      .main-btn {
+        height: 48px;
+      }
+    }
+  }
+}
+
+.pro-buy-item {
+  border-bottom: 1px solid $light3;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  .pro-buy-top {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+
+    @media screen and (max-width: $screen-md) {
+      gap: 15px;
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      gap: 10px;
+      align-items: center;
+    }
+
+    .img {
+      width: 170px;
+      height: 150px;
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+
+      @media screen and (max-width: $screen-md) {
+        width: 160px;
+        height: 100px;
+      }
+
+      &.sm{
+        width: 160px;
+        height: 130px;
+      }
+
+      .buy-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: $main-transition;
+      }
+    }
+
+    .pro-buy-content {
+      flex: 1;
+      @media screen and (max-width: $screen-xs) {
+        width: 100%;
+        flex: auto;
+      }
+
+      .pro-buy-head {
+        @include between;
+        margin-bottom: 10px;
+        width: 100%;
+
+        .title {
+          font-size: 17px;
+          font-weight: 700;
+
+          @media screen and (max-width: $screen-sm) {
+            width: auto;
+          }
+
+          @media screen and (max-width: $screen-xs) {
+            font-size: 14px;
+          }
+
+          &.lg {
+            font-size: 16px;
+            font-family: fontDemi;
+          }
+        }
+
+        .sm-btn {
+          flex-shrink: 0;
+        }
+
+        .pro-icon {
+          color: $main;
+          font-size: 16px;
+
+          @media screen and (max-width: $screen-md) {
+            display: none;
+          }
+        }
+      }
+
+      .buy-buttons {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-top: 14px;
+
+        .buy-btn {
+          padding: 0;
+          font-size: 16px;
+          color: $light5;
+          display: flex;
+          align-items: center;
+          gap: 7px;
+          cursor: pointer;
+          background-color: transparent;
+          outline: none;
+
+          &.blue {
+            .ic {
+              color: $main;
+            }
+          }
+
+          &.red {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+
+  .pro-buy-down {
+    font-size: 15px;
+    margin-top: 15px;
+    color: $light5;
+    width: 400px;
+    line-height: 1.7;
+    @media screen and (max-width: $screen-sm) {
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    .buy-img {
+      transform: rotate(-3deg) scale(1.1);
+    }
+  }
+}
+
+// summary-item
+.summary-item {
+  @include between;
+  gap: 8px;
+  background-color: $white;
+  padding: 24px 22px;
+
+  &:nth-child(even) {
+    padding: 15px 22px;
+    background-color: $white3;
+  }
+
+  .first {
+    color: $light5;
+    font-size: 16px;
+    font-family: fontMed;
+  }
+
+  .second {
+    color: $main;
+    font-family: fontDemi;
+    font-size: 15px;
+  }
+
+  &.total {
+    .first {
+      font-family: fontDemi;
+      color: $black;
+    }
+  }
+}
+
+// done-section
+.done-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+
+  .done-img {
+    width: 205px;
+    height: 105px;
+
+    @media screen and (max-width: $screen-xs) {
+      width: 175px;
+      height: 86px;
+    }
+
+    @media screen and (max-width: $screen-xxs) {
+      width: 165px;
+      height: 80px;
+    }
+  }
+
+  .done-text {
+    font-size: 20px;
+    color: $light5;
+    font-family: fontDemi;
+  }
+}
+/********************* End Cart section *********************/
+
+/********************* Start Payment section *********************/
+
+/************* Start payment Section *************/
+.payment-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  // margin-bottom: 25px;
+}
+
+.payment-item .payment-input {
+  display: none;
+}
+
+.payment-item .payment-input:checked + .payment-label {
+  background-color: #fff;
+  border-color: $main;
+}
+
+.payment-item .payment-input:checked + .payment-label .circle {
+  background-color: $main;
+}
+
+.payment-item .payment-input:checked + .payment-label .circle::after {
+  opacity: 1;
+}
+
+.payment-item .payment-input:checked + .payment-label {
+  background-color: #fff;
+  border-color: $main;
+}
+
+.payment-item .payment-label {
+  padding: 14px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background-color: #f7f7ff;
+  cursor: pointer;
+  border-radius: 6px;
+  // min-width: 220px;
+  border: 1px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.payment-item .payment-label .right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.payment-item .payment-label .right .payment-img {
+  width: 28px;
+  height: 25px;
+}
+
+.payment-item .payment-label .right .name {
+  color: #3b3b3b;
+  font-size: 16px;
+  margin-bottom: 3px;
+  display: block;
+}
+
+.payment-item .payment-label .right .text {
+  color: #989898;
+  font-size: 12px;
+}
+
+.payment-item .payment-label .circle {
+  @include circle(22px);
+  background-color: #fff;
+  border: 1px solid $main;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.payment-item .payment-label .circle::after {
+  content: "";
+  height: 6px;
+  width: 11px;
+  border-left: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  border-radius: 1px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%) rotate(-45deg);
+  transform-origin: center center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 425px) {
+  .payment-item {
+    width: 100%;
+  }
+
+  .payment-item .payment-label {
+    padding: 18px 14px;
+    width: 100%;
+  }
+
+  .payment-item .payment-label .right .name {
+    font-size: 15px;
+  }
+}
+
+/********************* End Payment section *********************/
+
+/********************* Start Done section *********************/
+// done Section
+.done-sec{
+  box-shadow: none !important;
+  .done-img{
+      max-width: 340px;
+      max-height: 340px;
+      margin-bottom: 25px;
+
+      @media screen and (max-width:$screen-sm) {
+          max-height: 235px;
+          max-width: 220px;
+      }
+  }
+
+  .title{
+      font-size: 24px;
+      color: $black;
+      @include center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-family: fontDemi;
+
+      @media screen and (max-width:$screen-sm) {
+          font-size: 20px;
+      }
+
+
+      .title-ic{
+          max-width: 24px;
+
+          @media screen and (max-width:$screen-sm) {
+              max-width: 20px;
+          }
+      }
+  }
+
+  .info{
+      margin-bottom: 25px;
+      line-height: 1.6;
+      font-size: 16px;
+
+      @media screen and (max-width:$screen-sm) {
+          font-size: 15px;
+      }
+  }
+
+}
+/********************* End Done section *********************/
