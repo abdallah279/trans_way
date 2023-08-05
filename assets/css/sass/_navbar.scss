@@ -58,9 +58,12 @@
         }
       }
     }
-    
-    .nav-width{
-        width: 84px;
+
+    .nav-width {
+      min-width: 84px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .nav-ic {
@@ -70,6 +73,7 @@
       border: 1px solid $white;
       cursor: pointer;
       position: relative;
+      flex-shrink: 0;
 
       .ic {
         max-width: 20px;
@@ -78,22 +82,98 @@
         color: $white;
       }
 
-      &.cart{
+      &.cart {
         &:before {
-          content:attr(data-totalitems);
+          content: attr(data-totalitems);
           font-size: 11px;
-          position:absolute;
-          top:-6px;
+          position: absolute;
+          top: -6px;
           @include dir-right(-8px);
           @include circle(20px);
           @include center;
-          padding:0 5px;
-          color:$black;
+          padding: 0 5px;
+          color: $black;
           background-color: $orange;
         }
 
         &.shake {
-          animation: shakeCart .4s ease-in-out forwards;
+          animation: shakeCart 0.4s ease-in-out forwards;
+        }
+      }
+    }
+
+    .nav-search {
+      position: relative;
+
+      .nav-search-ic {
+        position: relative;
+        transition: $main-transition;
+        z-index: 8;
+      }
+
+      .nav-search-inp {
+        position: absolute;
+        top: 50%;
+        #{$ltr} & {
+          transform: translateY(-50%) translateX(-188px);
+        }
+        #{$rtl} & {
+          transform: translateY(-50%) translateX(188px);
+        }
+        @include dir-left(0);
+        background-color: $white;
+        box-shadow: $main-shadow;
+        z-index: 7;
+        border-radius: 5px;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s ease-in-out;
+        width: 280px;
+
+        .search {
+          height: 52px;
+          @include dir-padding-left(56px);
+          width: 100%;
+
+          &::placeholder {
+            font-size: 15px;
+            color: $black;
+          }
+        }
+
+        @media screen and (max-width: $screen-xs) {
+          #{$ltr} & {
+            transform: translateY(-50%) translateX(-132px);
+          }
+          #{$rtl} & {
+            transform: translateY(-50%) translateX(132px);
+          }
+        }
+      }
+
+      &.open {
+        .nav-search-ic {
+          #{$ltr} & {
+            transform: translateX(-182px);
+          }
+          #{$rtl} & {
+            transform: translateX(182px);
+          }
+
+          @media screen and (max-width: $screen-xs) {
+            #{$ltr} & {
+              transform: translateX(-128px);
+            }
+            #{$rtl} & {
+              transform: translateX(128px);
+            }
+          }
+        }
+
+        .nav-search-inp {
+          opacity: 1;
+          pointer-events: auto;
         }
       }
     }

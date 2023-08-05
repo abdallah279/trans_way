@@ -1399,7 +1399,9 @@ html[lang=ar] .copy-item {
 
 .form-style {
   background-color: #fff;
-  border-radius: 20px;
+  box-shadow: 0 0 5px 0 rgba(37, 33, 34, 0.1);
+  border-radius: 15px;
+  padding: 35px 25px;
 }
 
 .form-padding {
@@ -1615,7 +1617,7 @@ html[lang=ar] .remove-append {
 
 .name-text {
   font-size: 13px;
-  color: #8A8A8A;
+  color: #7E8485;
   font-family: fontReg;
 }
 
@@ -1759,11 +1761,10 @@ html[lang=ar] .main-imgs .main-img:not(:last-child) {
 .stars {
   display: flex;
   align-items: center;
-  gap: 4px;
 }
 .stars .star {
-  font-size: 17px;
-  color: #f7f7ff;
+  font-size: 13px;
+  color: #ffce2b;
 }
 .stars.lg {
   gap: 5px;
@@ -1780,7 +1781,8 @@ html[lang=ar] .main-imgs .main-img:not(:last-child) {
 
 .main-label {
   margin-bottom: 12px;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 700;
   color: #252122;
   display: flex;
   align-items: center;
@@ -1796,12 +1798,6 @@ html[lang=ar] .main-imgs .main-img:not(:last-child) {
     font-size: 15px;
   }
 }
-@media screen and (max-width: 425px) {
-  .main-label {
-    font-family: fontMed;
-    font-size: 15px;
-  }
-}
 
 .main-input {
   position: relative;
@@ -1813,7 +1809,7 @@ html[lang=ar] .main-imgs .main-img:not(:last-child) {
   padding: 0 12px;
   outline: none;
   border: none;
-  font-size: 14px;
+  font-size: 16px;
   color: #060042;
   transition: all 0.3s ease;
   border: 1px solid #E5E5E5;
@@ -1832,13 +1828,13 @@ html[lang=ar] .main-imgs .main-img:not(:last-child) {
   cursor: pointer;
 }
 .main-input .input-me::-moz-placeholder {
-  font-size: 13px;
+  font-size: 15px;
   color: #2898c6;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .main-input .input-me::placeholder {
-  font-size: 13px;
+  font-size: 15px;
   color: #2898c6;
   transition: all 0.3s ease;
 }
@@ -2867,10 +2863,10 @@ html[lang=ar] .modal-dialog .close-btn {
   border: none;
 }
 html[lang=en] .dropdown-menu {
-  inset: 50px auto auto 0%;
+  inset: 60px auto auto 0%;
 }
 html[lang=ar] .dropdown-menu {
-  inset: 50px 0% auto auto;
+  inset: 60px 0% auto auto;
 }
 .dropdown-menu.show {
   opacity: 1;
@@ -2878,10 +2874,10 @@ html[lang=ar] .dropdown-menu {
   transform: translate3d(0px, 0px, 0px) !important;
 }
 html[lang=en] .dropdown-menu.show {
-  inset: 28px auto auto 0% !important;
+  inset: 45px auto auto 0% !important;
 }
 html[lang=ar] .dropdown-menu.show {
-  inset: 28px 0% auto auto !important;
+  inset: 45px 0% auto auto !important;
 }
 html[lang=en] .dropdown-menu.left {
   inset: 50px 0% auto auto;
@@ -3267,7 +3263,10 @@ html[lang=ar] .pagination .page-item:last-child .page-link {
   }
 }
 .page-header .header-content .nav-width {
-  width: 84px;
+  min-width: 84px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .page-header .header-content .nav-ic {
   border-radius: 50%;
@@ -3280,6 +3279,7 @@ html[lang=ar] .pagination .page-item:last-child .page-link {
   border: 1px solid #fff;
   cursor: pointer;
   position: relative;
+  flex-shrink: 0;
 }
 .page-header .header-content .nav-ic .ic {
   max-width: 20px;
@@ -3310,6 +3310,83 @@ html[lang=ar] .page-header .header-content .nav-ic.cart:before {
 }
 .page-header .header-content .nav-ic.cart.shake {
   animation: shakeCart 0.4s ease-in-out forwards;
+}
+.page-header .header-content .nav-search {
+  position: relative;
+}
+.page-header .header-content .nav-search .nav-search-ic {
+  position: relative;
+  transition: all 0.3s ease;
+  z-index: 8;
+}
+.page-header .header-content .nav-search .nav-search-inp {
+  position: absolute;
+  top: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(37, 33, 34, 0.1);
+  z-index: 7;
+  border-radius: 5px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+  width: 280px;
+}
+html[lang=en] .page-header .header-content .nav-search .nav-search-inp {
+  transform: translateY(-50%) translateX(-188px);
+}
+html[lang=ar] .page-header .header-content .nav-search .nav-search-inp {
+  transform: translateY(-50%) translateX(188px);
+}
+html[lang=en] .page-header .header-content .nav-search .nav-search-inp {
+  left: 0;
+}
+html[lang=ar] .page-header .header-content .nav-search .nav-search-inp {
+  right: 0;
+}
+.page-header .header-content .nav-search .nav-search-inp .search {
+  height: 52px;
+  width: 100%;
+}
+html[lang=en] .page-header .header-content .nav-search .nav-search-inp .search {
+  padding-left: 56px;
+}
+html[lang=ar] .page-header .header-content .nav-search .nav-search-inp .search {
+  padding-right: 56px;
+}
+.page-header .header-content .nav-search .nav-search-inp .search::-moz-placeholder {
+  font-size: 15px;
+  color: #252122;
+}
+.page-header .header-content .nav-search .nav-search-inp .search::placeholder {
+  font-size: 15px;
+  color: #252122;
+}
+@media screen and (max-width: 425px) {
+  html[lang=en] .page-header .header-content .nav-search .nav-search-inp {
+    transform: translateY(-50%) translateX(-132px);
+  }
+  html[lang=ar] .page-header .header-content .nav-search .nav-search-inp {
+    transform: translateY(-50%) translateX(132px);
+  }
+}
+html[lang=en] .page-header .header-content .nav-search.open .nav-search-ic {
+  transform: translateX(-182px);
+}
+html[lang=ar] .page-header .header-content .nav-search.open .nav-search-ic {
+  transform: translateX(182px);
+}
+@media screen and (max-width: 425px) {
+  html[lang=en] .page-header .header-content .nav-search.open .nav-search-ic {
+    transform: translateX(-128px);
+  }
+  html[lang=ar] .page-header .header-content .nav-search.open .nav-search-ic {
+    transform: translateX(128px);
+  }
+}
+.page-header .header-content .nav-search.open .nav-search-inp {
+  opacity: 1;
+  pointer-events: auto;
 }
 .page-header .header-content .side-open {
   display: none;
@@ -3622,14 +3699,6 @@ html[lang=ar] .footer .foot-content .footer-links .link:hover {
   z-index: -1;
   z-index: -1;
 }
-.home-sec .home-bg {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 200px;
-  z-index: 2;
-}
 .home-sec .home-slider {
   position: absolute;
   top: 0;
@@ -3647,6 +3716,12 @@ html[lang=ar] .footer .foot-content .footer-links .link:hover {
   .home-sec .home-slider .home-img {
     height: 500px;
   }
+}
+.home-sec.sm {
+  height: 240px;
+}
+.home-sec.sm .home-slider .home-img {
+  height: 240px;
 }
 
 /********************* End Home section *********************/
@@ -3982,4 +4057,72 @@ html[lang=ar] .client-item::before {
   max-height: 75px;
 }
 
-/********************* End brand section *********************//*# sourceMappingURL=main.css.map */
+/********************* End brand section *********************/
+/********************* Start reviews section *********************/
+.reviews-slider .center .review-card {
+  background-color: #f7f7ff;
+  transform: scale(1);
+  opacity: 1;
+}
+.reviews-slider .owl-dots {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+.reviews-slider .owl-dots .owl-dot {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #dbeded !important;
+  transition: all 0.3s ease;
+}
+.reviews-slider .owl-dots .owl-dot.active {
+  background-color: #2898c6 !important;
+}
+
+.review-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px 20px;
+  box-shadow: 0 0 5px 0 rgba(37, 33, 34, 0.1);
+  transition: all 0.3s ease;
+  transform: scale(0.8);
+  opacity: 0.7;
+}
+.review-card .top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.review-card .review-img {
+  border-radius: 50%;
+  width: 65px !important;
+  height: 65px !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0 0 5px 0 rgba(37, 33, 34, 0.1);
+}
+.review-card .name {
+  font-size: 19px;
+  font-weight: 700;
+  color: #252122;
+  margin-bottom: 5px;
+}
+.review-card .jop {
+  font-size: 17px;
+  color: #7E8485;
+}
+.review-card .text-con {
+  position: relative;
+  margin-top: 18px;
+}
+.review-card .text-con .info {
+  line-height: 25px;
+  font-size: 16px;
+}
+
+/********************* End reviews section *********************/
+/********************* Start form section *********************/
+/********************* End form section *********************//*# sourceMappingURL=main.css.map */

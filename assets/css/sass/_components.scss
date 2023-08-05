@@ -1180,7 +1180,9 @@
 
 .form-style {
   background-color: $white;
-  border-radius: 20px;
+  box-shadow: $main-shadow;
+  border-radius: 15px;
+  padding: 35px 25px;
 }
 
 .form-padding {
@@ -1513,10 +1515,10 @@
 .stars {
   display: flex;
   align-items: center;
-  gap: 4px;
+  // gap: 4px;
   .star {
-    font-size: 17px;
-    color: $sec;
+    font-size: 13px;
+    color: $yellow;
   }
 
   &.lg {
@@ -1535,8 +1537,9 @@
 
 .main-label {
   margin-bottom: 12px;
-  font-size: 15px;
+  font-size: 16px;
   // font-family: fontDemi;
+  font-weight: 700;
   color: $black;
   display: flex;
   align-items: center;
@@ -1551,11 +1554,6 @@
   @media screen and (max-width: $screen-sm) {
     font-size: 15px;
   }
-
-  @media screen and (max-width: $screen-xs) {
-    font-family: fontMed;
-    font-size: 15px;
-  }
 }
 
 .main-input {
@@ -1568,7 +1566,7 @@
     padding: 0 12px;
     outline: none;
     border: none;
-    font-size: 14px;
+    font-size: 16px;
     color: $dark;
     transition: $main-transition;
     border: 1px solid $light3;
@@ -1587,7 +1585,7 @@
     }
 
     &::placeholder {
-      font-size: 13px;
+      font-size: 15px;
       color: $main;
       transition: $main-transition;
     }
@@ -2648,10 +2646,10 @@
   border-radius: 15px;
   min-width: 220px;
   #{$ltr} & {
-    inset: 50px auto auto 0%;
+    inset: 60px auto auto 0%;
   }
   #{$rtl} & {
-    inset: 50px 0% auto auto;
+    inset: 60px 0% auto auto;
   }
   transform: translate3d(0px, 0px, 0px);
   border: none;
@@ -2660,10 +2658,10 @@
     opacity: 1;
     pointer-events: auto;
     #{$ltr} & {
-      inset: 28px auto auto 0% !important;
+      inset: 45px auto auto 0% !important;
     }
     #{$rtl} & {
-      inset: 28px 0% auto auto !important;
+      inset: 45px 0% auto auto !important;
     }
     transform: translate3d(0px, 0px, 0px) !important;
   }
