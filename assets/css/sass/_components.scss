@@ -2861,12 +2861,20 @@
       inset: 70px auto auto 0%;
     }
 
+    @media screen and (max-width: $screen-lg) {
+      transform: translate3d(0px, 0px, 0px) !important;
+    }
+
     &.show {
       #{$ltr} & {
         inset: 40px 0% auto auto !important;
       }
       #{$rtl} & {
         inset: 40px auto auto 0% !important;
+      }
+
+      @media screen and (max-width: $screen-lg) {
+        transform: translate3d(0px, 0px, 0px) !important;
       }
     }
   }
