@@ -152,12 +152,12 @@
           }
         }
 
-        @media screen and (max-width: $screen-xs) {
+        @media screen and (max-width: $screen-lg) {
           #{$ltr} & {
-            transform: translateY(-50%) translateX(-132px);
+            transform: translateY(-50%) translateX(-148px);
           }
           #{$rtl} & {
-            transform: translateY(-50%) translateX(132px);
+            transform: translateY(-50%) translateX(148px);
           }
         }
       }
@@ -171,12 +171,12 @@
             transform: translateX(182px);
           }
 
-          @media screen and (max-width: $screen-xs) {
+          @media screen and (max-width: $screen-lg) {
             #{$ltr} & {
-              transform: translateX(-128px);
+              transform: translateX(-140px);
             }
             #{$rtl} & {
-              transform: translateX(128px);
+              transform: translateX(140px);
             }
           }
         }

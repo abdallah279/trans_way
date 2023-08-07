@@ -2829,6 +2829,11 @@
     inset: 70px 0% auto auto;
   }
   transform: translate3d(0px, 0px, 0px);
+
+  @media screen and (max-width: $screen-lg) {
+    transform: translate3d(0px, 0px, 0px) translatex(70px) !important;
+  }
+
   border: none;
 
   &.show {
@@ -2841,6 +2846,10 @@
       inset: 45px 0% auto auto !important;
     }
     transform: translate3d(0px, 0px, 0px) !important;
+
+    @media screen and (max-width: $screen-lg) {
+      transform: translate3d(0px, 0px, 0px) translatex(70px) !important;
+    }
   }
 
   &.left {
@@ -3203,7 +3212,7 @@
   height: 48px;
   padding: 15px;
 
-  @media screen and (max-width:$screen-lg) {
+  @media screen and (max-width: $screen-lg) {
     width: 130px;
     padding: 12px 10px;
   }
@@ -3234,9 +3243,9 @@
       background-color: $red;
     }
 
-    @media screen and (max-width:$screen-lg) {
+    @media screen and (max-width: $screen-lg) {
       width: 22px;
       height: 22px;
-    } 
+    }
   }
 }
