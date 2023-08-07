@@ -1319,7 +1319,7 @@
 .form-padding {
   padding: 40px 35px;
 
-  @media screen and (max-width: $screen-xs) {
+  @media screen and (max-width: $screen-sm) {
     padding: 30px 20px;
   }
 }
@@ -1348,6 +1348,10 @@
   }
 }
 
+.form-sec{
+  position: relative;
+}
+
 .info {
   font-size: 14px;
   line-height: 1.7;
@@ -1361,6 +1365,44 @@
   height: 100%;
   opacity: 0.7;
   z-index: -1;
+}
+
+.login-img {
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  max-width: 100px;
+  // opacity: 0.7;
+  z-index: -1;
+  
+  @media screen and (max-width:$screen-lg) {
+    top: 40px;
+    left: 30px;
+  }
+  
+  @media screen and (max-width:$screen-xs) {
+    top: 20px;
+    left: 10px;
+  }
+}
+
+.login-img2 {
+  position: absolute;
+  bottom: 80px;
+  right: 100px;
+  max-width: 100px;
+  // opacity: 0.7;
+  z-index: -1;
+
+  @media screen and (max-width:$screen-lg) {
+    bottom: 40px;
+    right: 30px;
+  }
+
+  @media screen and (max-width:$screen-xs) {
+    bottom: 20px;
+    right: 10px;
+  }
 }
 
 .bottom_background {

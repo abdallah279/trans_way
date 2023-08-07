@@ -27,7 +27,6 @@ $(".nav-search-ic").on("click", function () {
 // SideBar
 $(".side-open").on("click", function () {
   $(".links").addClass("active");
-  $(".page-header-con").addClass("open");
   $(".overlay-m").fadeIn(600);
 });
 
@@ -45,9 +44,6 @@ $(".overlay-m").on("click", function () {
   $(".links").removeClass("active");
   $(".side-links-con").removeClass("active");
   $(this).fadeOut(500);
-  setTimeout(() => {
-    $(".page-header-con").removeClass("open");
-  }, 505);
 });
 
 // dropDown stopPropagation
