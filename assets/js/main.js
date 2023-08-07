@@ -12,12 +12,12 @@ window.addEventListener("scroll", function () {
 });
 
 // Active Link
-$(".page-navbar .links .link").each(function () {
-  $(this).removeClass("active");
-  if (window.location.href.includes($(this).attr("href"))) {
-    $(this).addClass("active");
-  }
-});
+// $(".page-navbar .links .link").each(function () {
+//   $(this).removeClass("active");
+//   if (window.location.href.includes($(this).attr("href"))) {
+//     $(this).addClass("active");
+//   }
+// });
 
 // Show And Hide Search Navbar
 $(".nav-search-ic").on("click", function () {
@@ -27,11 +27,12 @@ $(".nav-search-ic").on("click", function () {
 // SideBar
 $(".side-open").on("click", function () {
   $(".links").addClass("active");
+  $(".page-header-con").addClass("open");
   $(".overlay-m").fadeIn(600);
 });
 
-$(".side-user-open").on("click", function () {
-  $(".sidebar").addClass("active");
+$(".open-sidebar").on("click", function () {
+  $(".side-links-con").addClass("active");
   $(".overlay-m").fadeIn(600);
 });
 
@@ -42,8 +43,11 @@ $(".close").on("click", function () {
 
 $(".overlay-m").on("click", function () {
   $(".links").removeClass("active");
-  $(".sidebar").removeClass("active");
+  $(".side-links-con").removeClass("active");
   $(this).fadeOut(500);
+  setTimeout(() => {
+    $(".page-header-con").removeClass("open");
+  }, 505);
 });
 
 // dropDown stopPropagation
@@ -164,13 +168,13 @@ $(".cards-slider").each(function () {
       },
       560: {
         items: 2,
-        nav: false,
+        margin: 20,
       },
     },
   });
 
   setTimeout(() => {
-    $(this).find(`.owl-stage-outer`).addClass("p-2");
+    $(this).find(`.owl-stage-outer`).addClass("p-1");
     $(this).find(`.owl-prev`).addClass("up");
     $(this).find(`.owl-next`).addClass("up");
   }, 5);
@@ -194,6 +198,49 @@ $(".product-btn").each(function () {
   });
 });
 
+let background = $(".text-sec").attr("data-background");
+$(".text-sec").css("background-image", `url(${background})`);
 
-let background = $('.text-sec').attr('data-background');
-$('.text-sec').css('background-image', `url(${background})`)
+// Tabs Profile
+$(".tabs-show").css("display", "none");
+getProFromLocal();
+
+$(".tabs-m").on("click", function (e) {
+  e.preventDefault();
+
+  // FadeOut All Content
+  $(".tabs-show").fadeOut(0);
+  let item = $(this).attr("data-show");
+
+  // Show Current Content
+  $(`.${item}`).fadeIn();
+
+  // Active Class In Tabs
+  $(".tabs-m").removeClass("active");
+  $(this).addClass("active");
+
+  // Set Item
+  addLocal(item);
+
+  $(".overlay-m").click();
+});
+
+// Add activeTab To Local storage
+function addLocal(tab) {
+  sessionStorage.setItem("activeTab", JSON.stringify(tab));
+}
+
+// Get activeTab From Local Storage
+function getProFromLocal() {
+  let data = sessionStorage.getItem("activeTab");
+
+  // Check if Theres activeTab In Local Storage
+  if (data) {
+    activeTab = JSON.parse(data);
+    $(`.${activeTab}`).fadeIn();
+    $(".tabs-m").removeClass("active");
+    $(`[data-show=${activeTab}]`).addClass("active");
+  } else {
+    $(".user-account").fadeIn(0);
+  }
+}

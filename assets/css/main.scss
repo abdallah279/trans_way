@@ -7,10 +7,28 @@
   position: relative;
   height: 710px;
 
+  @media screen and (max-width: $screen-lg) {
+    position: static;
+  }
+
+  @media screen and (max-width: $screen-md) {
+    height: 500px;
+  }
+
   &::after {
     content: "";
-    @include overlay(rgba($color: $black, $alpha: 0.5));
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: $black, $alpha: 0.5);
     z-index: -1;
+    width: 100%;
+    height: 710px;
+    // @include overlay();
+
+    @media screen and (max-width: $screen-md) {
+      height: 500px;
+    }
   }
 
   .home-slider {
@@ -40,6 +58,10 @@
       }
     }
   }
+
+  .owl-dots{
+    display: none !important;
+  }
 }
 
 /********************* End Home section *********************/
@@ -50,19 +72,43 @@
   @include center;
   gap: 30px;
 
+  @media screen and (max-width: $screen-lg) {
+    gap: 20px;
+  }
+
   .banner-item {
     display: flex;
     align-items: center;
     gap: 30px;
 
+    @media screen and (max-width: $screen-lg) {
+      gap: 20px;
+    }
+
     .banner-img {
-      max-width: 200px;
+      max-width: 180px;
       max-height: 155px;
+
+      @media screen and (max-width: $screen-lg2) {
+        max-width: 150px;
+      }
+
+      @media screen and (max-width: $screen-lg) {
+        max-width: 120px;
+      }
     }
 
     .banner-ic {
-      max-width: 100px;
-      max-height: 100px;
+      max-width: 90px;
+      max-height: 90px;
+
+      @media screen and (max-width: $screen-lg2) {
+        max-width: 55px;
+      }
+
+      @media screen and (max-width: $screen-lg) {
+        max-width: 35px;
+      }
     }
 
     &:last-child {
@@ -81,12 +127,24 @@
   position: relative;
   margin-bottom: 40px;
 
+  .owl-stage-outer {
+    &.p-1 {
+      @media screen and (max-width: $screen-xs) {
+        padding: 4px 0 !important;
+      }
+    }
+  }
+
   .owl-nav {
     position: absolute;
     top: -88px;
     @include dir-right(105px);
     display: flex;
     gap: 5px;
+    @media screen and (max-width: $screen-sm) {
+      top: -83px;
+      @include dir-right(91px);
+    }
   }
 
   .owl-prev,
@@ -107,7 +165,12 @@
     }
 
     @media screen and (max-width: $screen-sm) {
-      display: none !important;
+      @include circle(35px);
+      font-size: 14px !important;
+    }
+
+    @media screen and (max-width: $screen-xxs) {
+      display: none;
     }
   }
 }
@@ -126,6 +189,10 @@
       height: 240px;
       object-fit: cover;
       transition: $main-transition;
+
+      @media screen and (max-width: $screen-md) {
+        height: 180px;
+      }
     }
   }
 
@@ -136,6 +203,10 @@
     justify-content: space-between;
     gap: 12px;
 
+    @media screen and (max-width: $screen-md) {
+      gap: 7px;
+    }
+
     .product-name {
       font-size: 18px;
       // font-family: fontDemi;
@@ -145,6 +216,10 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
       height: 26px;
+
+      @media screen and (max-width: $screen-md) {
+        font-size: 16px;
+      }
     }
 
     .product-subtitle {
@@ -162,6 +237,11 @@
     .product-footer {
       @include between;
       font-size: 15px;
+      gap: 15px;
+
+      .main-btn {
+        min-width: 125px;
+      }
 
       .product-btn {
         .cart-item {
@@ -204,6 +284,10 @@
     .img {
       .product-img {
         transform: scale(1.1) rotate(-5deg);
+
+        @media screen and (max-width: $screen-xs) {
+          transform: scale(1.2) rotate(-5deg);
+        }
       }
     }
   }
@@ -253,22 +337,56 @@
     height: 80px;
     z-index: 1;
     // object-fit: cover;
+
+    @media screen and (max-width: $screen-md) {
+      width: 50px;
+      height: 50px;
+      display: none;
+    }
   }
 
   .about-container {
     @include between;
     gap: 35px;
 
+    @media screen and (max-width: $screen-md) {
+      flex-direction: column-reverse;
+    }
+
     .about-img {
       width: 500px;
       object-fit: cover;
       height: 350px;
       border-radius: 8px;
+
+      @media screen and (max-width: $screen-lg) {
+        width: 325px;
+        height: 290px;
+      }
+
+      @media screen and (max-width: $screen-md) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        opacity: 0.1;
+      }
     }
 
     .about-content {
       display: grid;
       row-gap: 18px;
+
+      @media screen and (max-width: $screen-lg) {
+        row-gap: 14px;
+      }
+
+      @media screen and (max-width: $screen-md) {
+        justify-items: center;
+        position: relative;
+        z-index: 2;
+      }
 
       .logo {
         max-width: 80px;
@@ -278,10 +396,18 @@
       .about-title {
         font-size: 20px;
         font-weight: 700;
+
+        @media screen and (max-width: $screen-lg) {
+          font-size: 18px;
+        }
       }
 
       .about-text {
         line-height: 26px;
+
+        @media screen and (max-width: $screen-md) {
+          text-align: center;
+        }
       }
 
       .main-btn {
@@ -302,6 +428,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 2;
+
+  @media screen and (max-width: $screen-lg) {
+    padding: 100px 0;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    padding: 70px 0;
+  }
 
   &::after {
     content: "";
@@ -330,6 +464,18 @@
     color: $white;
     position: relative;
     z-index: 3;
+
+    @media screen and (max-width: $screen-lg) {
+      font-size: 28px;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 24px;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 20px;
+    }
   }
 }
 
@@ -421,6 +567,10 @@
   transform: scale(0.8);
   opacity: 0.7;
 
+  @media screen and (max-width: $screen-md) {
+    padding: 15px 10px;
+  }
+
   .top {
     display: flex;
     align-items: center;
@@ -431,6 +581,10 @@
     @include circle(65px !important);
     object-fit: cover;
     box-shadow: $main-shadow;
+
+    @media screen and (max-width: $screen-md) {
+      @include circle(55px !important);
+    }
   }
 
   .name {
@@ -438,21 +592,37 @@
     font-weight: 700;
     color: $black;
     margin-bottom: 5px;
+
+    @media screen and (max-width: $screen-md) {
+      font-size: 17px;
+    }
   }
 
   .jop {
     font-size: 17px;
     color: $light2;
+
+    @media screen and (max-width: $screen-md) {
+      font-size: 16px;
+    }
   }
 
   .text-con {
     position: relative;
     margin-top: 18px;
 
+    @media screen and (max-width: $screen-md) {
+      margin-top: 12px;
+    }
+
     .info {
       // text-align: center;
       line-height: 25px;
       font-size: 16px;
+
+      @media screen and (max-width: $screen-md) {
+        font-size: 15px;
+      }
     }
   }
 }
@@ -527,7 +697,7 @@
         height: 100px;
       }
 
-      &.sm{
+      &.sm {
         width: 160px;
         height: 130px;
       }
@@ -807,51 +977,271 @@
 /********************* End Payment section *********************/
 
 /********************* Start Done section *********************/
-// done Section
-.done-sec{
+
+.done-sec {
   box-shadow: none !important;
-  .done-img{
-      max-width: 340px;
-      max-height: 340px;
-      margin-bottom: 25px;
+  .done-img {
+    max-width: 340px;
+    max-height: 340px;
+    margin-bottom: 25px;
 
-      @media screen and (max-width:$screen-sm) {
-          max-height: 235px;
-          max-width: 220px;
-      }
+    @media screen and (max-width: $screen-sm) {
+      max-height: 235px;
+      max-width: 220px;
+    }
   }
 
-  .title{
-      font-size: 24px;
-      color: $black;
-      @include center;
-      gap: 8px;
-      margin-bottom: 12px;
-      font-family: fontDemi;
+  .title {
+    font-size: 24px;
+    color: $black;
+    @include center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-family: fontDemi;
 
-      @media screen and (max-width:$screen-sm) {
-          font-size: 20px;
+    @media screen and (max-width: $screen-sm) {
+      font-size: 20px;
+    }
+
+    .title-ic {
+      max-width: 24px;
+
+      @media screen and (max-width: $screen-sm) {
+        max-width: 20px;
       }
-
-
-      .title-ic{
-          max-width: 24px;
-
-          @media screen and (max-width:$screen-sm) {
-              max-width: 20px;
-          }
-      }
+    }
   }
 
-  .info{
-      margin-bottom: 25px;
-      line-height: 1.6;
-      font-size: 16px;
+  .info {
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-size: 16px;
 
-      @media screen and (max-width:$screen-sm) {
-          font-size: 15px;
-      }
+    @media screen and (max-width: $screen-sm) {
+      font-size: 15px;
+    }
   }
-
 }
+
 /********************* End Done section *********************/
+
+/***************** Start Side-Bar Section *********************/
+
+.side-bar {
+  width: calc(100% - 50px);
+
+  @media screen and (max-width: $screen-lg) {
+    width: 100%;
+  }
+}
+
+.side-links-con {
+  transition: all 0.8s cubic-bezier(0.68, -0.3, 0.265, 1.3);
+
+  @media screen and (max-width: $screen-lg) {
+    position: fixed;
+    top: 0;
+    @include dir-left(0);
+    height: 100vh;
+    width: 280px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $white;
+    box-shadow: $nav-shadow;
+    z-index: 1101;
+    padding: 30px 20px;
+    gap: 8px;
+
+    #{$ltr} & {
+      transform: translateX(-150%);
+    }
+    #{$rtl} & {
+      transform: translateX(150%);
+    }
+
+    &.active {
+      transform: translateX(0) !important;
+    }
+
+    overflow-y: auto;
+    overflow-x: clip;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 25px;
+      background-color: $main;
+    }
+  }
+}
+
+.side-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+  padding: 0 2px;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: $main-shadow;
+
+  .side-link {
+    padding: 12px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $black;
+    font-size: 16px;
+    position: relative;
+    transition: $main-transition;
+    border-radius: 6px;
+    overflow: hidden;
+    font-weight: 600;
+
+    .ic {
+      max-width: 18px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      @include dir-left(0);
+      height: 100%;
+      width: 0;
+      transition: $main-transition;
+      background-color: $light4;
+      z-index: -1;
+    }
+
+    &.active {
+      // background-color: $main;
+      color: $main;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &.red {
+      background-color: $red;
+      color: $white;
+    }
+
+    &.transparent {
+      background-color: $white;
+      color: $red;
+      border: 1px solid $red;
+    }
+
+    &.center {
+      justify-content: center;
+    }
+  }
+
+  .order-links {
+    .side-link {
+      border-top: 1px solid $light;
+      color: $side-color;
+      font-weight: 500;
+    }
+  }
+}
+
+/***************** End Side-Bar Section *********************/
+
+/***************** Start Order Item Section *********************/
+
+// order-item
+.img-order-con {
+  width: 110px;
+  height: 110px;
+  border-radius: 8px;
+  @include center;
+  border: 1px solid $light4;
+  flex-shrink: 0;
+
+  @media screen and (max-width: $screen-sm) {
+    width: 90px;
+    height: 90px;
+  }
+
+  .order-img {
+    // width: 68px;
+    // height: 36px;
+    max-width: 45px;
+
+    @media screen and (max-width: $screen-sm) {
+      width: 60px;
+      height: 28px;
+    }
+  }
+
+  &.lg {
+    width: 145px;
+    height: 120px;
+    border-width: 2px;
+
+    @media screen and (max-width: $screen-sm) {
+      width: 120px;
+      height: 100px;
+    }
+
+    .order-img {
+      width: 75px;
+      height: 42px;
+
+      @media screen and (max-width: $screen-sm) {
+        width: 60px;
+        height: 32px;
+      }
+    }
+  }
+}
+
+.order-item {
+  padding: 7px;
+  border: 1px solid $border-color;
+  box-shadow: $main-shadow;
+  border-radius: 8px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .left-sec {
+    padding: 0px 22px;
+    width: 100%;
+
+    @media screen and (max-width: $screen-sm) {
+      padding: 0 10px;
+    }
+
+    .left-item {
+      @include between;
+      gap: 8px 4px;
+      flex-wrap: wrap;
+      padding: 12px 0;
+      border-bottom: 1px solid $light4;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: $nav-shadow;
+    border-color: transparent;
+  }
+}
+
+/***************** End Order Item Section *********************/

@@ -1504,30 +1504,25 @@
         $(document).ready(function () {
             let isRtl2 = $('html[lang="ar"]').length > 0;
             $(".reviews-slider").owlCarousel({
-                items: 3,
+                items: 1,
                 loop: true,
                 center: true,
                 rtl: isRtl2 ? true : false,
-                margin: 35,
+                margin: 0,
                 dots: true,
                 autoplay: true,
                 autoplaySpeed: 2000,
                 autoplayTimeout: 5000,
                 smartSpeed: 1000,
-                // responsive: {
-                //     1200: {
-                //         items: 7
-                //     },
-                //     1000: {
-                //         items: 6
-                //     },
-                //     800: {
-                //         items: 4
-                //     },
-                //     400: {
-                //         items: 3
-                //     }
-                // }
+                responsive: {
+                    1000: {
+                        items: 3,
+                        margin: 35,
+                    },
+                    567: {
+                        items: 2
+                    }
+                }
             });
         });
     </script>
