@@ -239,6 +239,7 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
       height: 26px;
+      margin-bottom: 0;
 
       @media screen and (max-width: $screen-md) {
         font-size: 16px;
@@ -264,41 +265,6 @@
 
       .main-btn {
         min-width: 125px;
-      }
-
-      .product-btn {
-        .cart-item {
-          position: absolute;
-          top: -6px;
-          @include dir-right(-8px);
-          @include circle(20px);
-          @include center;
-          z-index: 8000;
-          opacity: 0;
-
-          &:before {
-            position: absolute;
-            content: "1";
-            display: block;
-            @include circle(20px);
-            font-size: 11px;
-            font-weight: 600;
-            background: $orange;
-            color: white;
-            @include center;
-            z-index: 8000;
-          }
-        }
-        &.sendtocart {
-          .cart-item {
-            display: block;
-            animation: xAxis 1s forwards cubic-bezier(1, 0.44, 0.84, 0.165);
-            &:before {
-              animation: yAxis 1s alternate forwards
-                cubic-bezier(0.165, 0.84, 0.44, 1);
-            }
-          }
-        }
       }
     }
   }
@@ -673,6 +639,10 @@
     .main-btn {
       height: 42px;
       border-radius: 5px;
+
+      @media screen and (max-width:$screen-xs) {
+        min-width: 90px;
+      }
     }
   }
 
@@ -719,14 +689,19 @@
       overflow: hidden;
       flex-shrink: 0;
 
-      @media screen and (max-width: $screen-md) {
-        width: 160px;
-        height: 100px;
+      @media screen and (max-width: $screen-xs) {
+        width: 100%;
+        height: 180px;
       }
 
       &.sm {
         width: 160px;
         height: 130px;
+
+        @media screen and (max-width: $screen-xs) {
+          width: 100%;
+          height: 180px;
+        }
       }
 
       .buy-img {
@@ -746,19 +721,17 @@
 
       .pro-buy-head {
         @include between;
+        flex-wrap: wrap;
         margin-bottom: 10px;
+        gap: 15px;
         width: 100%;
 
         .title {
           font-size: 17px;
           font-weight: 700;
 
-          @media screen and (max-width: $screen-sm) {
-            width: auto;
-          }
-
           @media screen and (max-width: $screen-xs) {
-            font-size: 14px;
+            font-size: 16px;
           }
 
           &.lg {
@@ -777,6 +750,20 @@
 
           @media screen and (max-width: $screen-md) {
             display: none;
+          }
+        }
+
+        .number-input{
+          @media screen and (max-width:$screen-lg) {
+            width: 130px;
+            padding: 12px 10px;
+          }
+
+          .btn-num{
+            @media screen and (max-width:$screen-lg) {
+              width: 22px;
+              height: 22px;
+            } 
           }
         }
       }
@@ -987,13 +974,8 @@
 }
 
 @media screen and (max-width: 425px) {
-  .payment-item {
-    width: 100%;
-  }
-
-  .payment-item .payment-label {
-    padding: 18px 14px;
-    width: 100%;
+  .payment-items{
+    gap: 15px 10px;
   }
 
   .payment-item .payment-label .right .name {
@@ -1064,6 +1046,7 @@
 
 .side-links-con {
   transition: all 0.8s cubic-bezier(0.68, -0.3, 0.265, 1.3);
+  background-color: $white;
 
   @media screen and (max-width: $screen-lg) {
     position: fixed;
@@ -1269,3 +1252,85 @@
 }
 
 /***************** End Order Item Section *********************/
+
+/***************** Start Product Detailes Section *********************/
+
+// Product Crad
+.product-content {
+  .product-name {
+    font-size: 18px;
+    margin-bottom: 18px;
+    font-weight: 700;
+    color: $black;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @media screen and (max-width: $screen-xs) {
+      font-size: 16px;
+    }
+  }
+
+  .product-info {
+    .title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .info {
+      // padding: 0 15px;
+      font-size: 16px;
+    }
+  }
+
+  .number-item {
+    color: $main;
+    margin-bottom: 15px;
+    font-size: 17px;
+    position: relative;
+    @include dir-padding-left(20px);
+
+    @media screen and (max-width:$screen-sm) {
+      font-size: 16px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      @include dir-left(0);
+      @include circle(6px);
+      background-color: $main;
+    }
+
+    &.red {
+      color: $red;
+    }
+  }
+}
+
+.product-carousel {
+  .owl-stage-outer {
+    border-radius: 10px;
+  }
+}
+
+.pro-slide-img {
+  width: 100%;
+  // min-height: 380px;
+  height: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+
+  @media screen and (max-width: $screen-lg) {
+    height: 340px !important;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    height: 240px !important;
+  }
+}
+/***************** End Product Detailes Section *********************/

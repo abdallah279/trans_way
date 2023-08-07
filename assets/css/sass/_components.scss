@@ -198,15 +198,7 @@
 }
 
 .grid-4 {
-  @include grid(250px, 20px);
-
-  @media screen and (max-width: $screen-md) {
-    @include grid(210px, 20px);
-  }
-
-  @media screen and (max-width: 510px) {
-    @include grid(150px, 15px);
-  }
+  @include grid(250px, 25px);
 }
 
 .grid-3 {
@@ -512,14 +504,17 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  // margin-bottom: 25px;
+  background-color: $white;
+  border-radius: 5px;
+  padding: 15px;
 
   .breadcrumb-m {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 15px;
+    font-size: 16px;
     color: $main;
+    font-weight: 600;
 
     &.active {
       color: $main;
@@ -680,23 +675,23 @@
   .main-btn {
     height: $btn-height !important;
     min-width: 100px !important;
-    
+
     @media screen and (max-width: $screen-sm) {
       height: 35px !important;
       min-width: 85px !important;
     }
   }
 
-  @media screen and (max-width:$screen-xs) {
+  @media screen and (max-width: $screen-xs) {
     align-items: start;
   }
 }
 
 .main-title {
   color: $black;
-  font-size: 20px;
+  font-size: 19px;
   // font-family: fontDemi;
-  font-weight: 700;
+  font-weight: 600;
   margin: auto;
   position: relative;
   width: fit-content;
@@ -847,19 +842,18 @@
   }
 }
 
-
-.open-sidebar{
+.open-sidebar {
   @include circle(36px);
   background-color: $main;
   color: $white;
   @include center;
   font-size: 15px;
+  cursor: pointer;
   display: none;
 
-  @media screen and (max-width:$screen-lg) {
+  @media screen and (max-width: $screen-lg) {
     display: flex;
   }
-
 }
 
 .copy-item {
@@ -978,6 +972,41 @@
 
   75% {
     transform: rotateZ(2deg);
+  }
+}
+
+.product-btn {
+  .cart-item {
+    position: absolute;
+    top: -6px;
+    @include dir-right(-8px);
+    @include circle(20px);
+    @include center;
+    z-index: 8000;
+    opacity: 0;
+
+    &:before {
+      position: absolute;
+      content: "1";
+      display: block;
+      @include circle(20px);
+      font-size: 11px;
+      font-weight: 600;
+      background: $orange;
+      color: white;
+      @include center;
+      z-index: 8000;
+    }
+  }
+  &.sendtocart {
+    .cart-item {
+      display: block;
+      animation: xAxis 1s forwards cubic-bezier(1, 0.44, 0.84, 0.165);
+      &:before {
+        animation: yAxis 1s alternate forwards
+          cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+    }
   }
 }
 
@@ -1348,7 +1377,7 @@
   }
 }
 
-.form-sec{
+.form-sec {
   position: relative;
 }
 
@@ -1374,13 +1403,13 @@
   max-width: 100px;
   // opacity: 0.7;
   z-index: -1;
-  
-  @media screen and (max-width:$screen-lg) {
+
+  @media screen and (max-width: $screen-lg) {
     top: 40px;
     left: 30px;
   }
-  
-  @media screen and (max-width:$screen-xs) {
+
+  @media screen and (max-width: $screen-xs) {
     top: 20px;
     left: 10px;
   }
@@ -1394,12 +1423,12 @@
   // opacity: 0.7;
   z-index: -1;
 
-  @media screen and (max-width:$screen-lg) {
+  @media screen and (max-width: $screen-lg) {
     bottom: 40px;
     right: 30px;
   }
 
-  @media screen and (max-width:$screen-xs) {
+  @media screen and (max-width: $screen-xs) {
     bottom: 20px;
     right: 10px;
   }
@@ -3174,6 +3203,11 @@
   height: 48px;
   padding: 15px;
 
+  @media screen and (max-width:$screen-lg) {
+    width: 130px;
+    padding: 12px 10px;
+  }
+
   input {
     color: $black;
     font-size: 16px;
@@ -3199,5 +3233,10 @@
     &.minus {
       background-color: $red;
     }
+
+    @media screen and (max-width:$screen-lg) {
+      width: 22px;
+      height: 22px;
+    } 
   }
 }
