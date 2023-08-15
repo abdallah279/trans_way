@@ -5,11 +5,7 @@
 
 .home-sec {
   position: relative;
-  height: 710px;
-
-  // @media screen and (max-width: $screen-lg) {
-  //   position: static;
-  // }
+  height: 100vh;
 
   @media screen and (max-width: $screen-md) {
     height: 500px;
@@ -24,12 +20,6 @@
     z-index: -1;
     width: 100%;
     height: 100%;
-    // height: 710px;
-    // // @include overlay();
-
-    // @media screen and (max-width: $screen-md) {
-    //   height: 500px;
-    // }
   }
 
   .home-slider {
@@ -41,7 +31,7 @@
     .home-img {
       width: 100%;
       // height: 100%;
-      height: 710px;
+      height: 100vh;
       object-fit: cover;
 
       @media screen and (max-width: $screen-md) {
@@ -58,10 +48,6 @@
         height: 240px;
       }
     }
-
-    // &::after {
-    //   height: 240px;
-    // }
   }
 
   .owl-dots {
@@ -913,6 +899,7 @@
 
 .payment-item .payment-label {
   padding: 14px 15px;
+  min-height: 54px;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -119,13 +119,13 @@
     <!-- End Home Section -->
 
 
-    
-    
+
+
     <!-- Start Shopping Cart -->
     <form action="confirm-order.html">
-        
+
         <div class="bg-light sec-pt main-pb">
-            
+
             <div class="container">
 
                 <ul class="breadcrumb-con mb-4">
@@ -135,7 +135,7 @@
                     <li class="breadcrumb-m">/</li>
                     <li class="breadcrumb-m" aria-current="page">السلة</li>
                 </ul>
-    
+
                 <!-- Products -->
                 <div class="card-style px-3 px-sm-4 mb-4">
 
@@ -160,12 +160,12 @@
                                             <span class="plus btn-num">
                                                 <i class="fa-solid fa-plus"></i>
                                             </span>
-                                            <input type="text" value="1"/>
+                                            <input type="text" value="1" />
                                             <span class="minus btn-num">
                                                 <i class="fa-solid fa-minus"></i>
                                             </span>
                                         </div>
-                                        
+
                                     </div>
 
                                     <div class="price-con align-items-start flex-row gap-3">
@@ -193,7 +193,8 @@
                             </div>
 
                             <p class="pro-buy-down">
-                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
+                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص
+                                العربى،
                             </p>
 
                         </div>
@@ -217,7 +218,7 @@
                                             <span class="plus btn-num">
                                                 <i class="fa-solid fa-plus"></i>
                                             </span>
-                                            <input type="text" value="1"/>
+                                            <input type="text" value="1" />
                                             <span class="minus btn-num">
                                                 <i class="fa-solid fa-minus"></i>
                                             </span>
@@ -250,7 +251,8 @@
                             </div>
 
                             <p class="pro-buy-down">
-                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
+                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص
+                                العربى،
                             </p>
 
                         </div>
@@ -274,7 +276,7 @@
                                             <span class="plus btn-num">
                                                 <i class="fa-solid fa-plus"></i>
                                             </span>
-                                            <input type="text" value="1"/>
+                                            <input type="text" value="1" />
                                             <span class="minus btn-num">
                                                 <i class="fa-solid fa-minus"></i>
                                             </span>
@@ -307,7 +309,8 @@
                             </div>
 
                             <p class="pro-buy-down">
-                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى،
+                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص
+                                العربى،
                             </p>
 
                         </div>
@@ -315,13 +318,13 @@
                     </div>
 
                 </div>
-    
+
                 <!-- Payment And Order summary -->
                 <div class="row">
-    
+
                     <!-- Payment Box -->
                     <div class="col-lg-6">
-    
+
                         <div class="description card-style mb-4">
                             <div class="main-card-title">طريقة الدفع</div>
                             <div class="card-content card-padding">
@@ -329,68 +332,76 @@
                                 <div class="payment-items">
 
                                     <div class="payment-item">
-            
+
                                         <input type="radio" name="payment" id="payment1" class="payment-input">
                                         <label for="payment1" class="payment-label">
-                
+
                                             <div class="right">
                                                 <img src="./assets/imgs/icons/buy2.png" alt="" class="payment-img">
                                                 <div class="content">
                                                     <div class="name">visa</div>
                                                 </div>
                                             </div>
-        
+
                                             <div class="circle"></div>
-        
+
                                         </label>
-            
-                                    </div>        
+
+                                    </div>
 
                                     <div class="payment-item">
-            
-                                        <input type="radio" name="payment" id="payment2" class="payment-input">
+
+                                        <input type="radio" name="payment" id="payment2" data-bank="bank" class="payment-input">
                                         <label for="payment2" class="payment-label">
-                
+
                                             <div class="right">
-                                                <img src="./assets/imgs/icons/buy5.png" alt="" class="payment-img">
+                                                <!-- <img src="./assets/imgs/icons/buy5.png" alt="" class="payment-img"> -->
                                                 <div class="content">
-                                                    <div class="name">stc pay</div>
+                                                    <div class="name">تحويل بنكى</div>
                                                 </div>
                                             </div>
-        
+
                                             <div class="circle"></div>
-        
+
                                         </label>
-            
+
                                     </div>
-        
+
                                     <div class="payment-item">
-            
+
                                         <input type="radio" name="payment" id="payment3" class="payment-input">
                                         <label for="payment3" class="payment-label">
-                
+
                                             <div class="right">
                                                 <img src="./assets/imgs/icons/buy3.png" alt="" class="payment-img">
                                                 <div class="content">
                                                     <div class="name">مدى</div>
                                                 </div>
                                             </div>
-        
+
                                             <div class="circle"></div>
-        
+
                                         </label>
-            
+
                                     </div>
-        
+
+                                </div>
+
+                                <div class="inputs mt-4">
+                                    <div class="main-input">
+                                        <input type="file" id="uploadPdf" accept="application/*" class="hidden-input" name="" id="">
+                                        <span class="input-me photo-input" id="pdf">ارفق ملف</span>
+                                        <i class="fa-solid fa-file main-icon"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-    
+
                         <!-- Code Input -->
                         <div class="card-style card-padding ">
-    
+
                             <div class="code-inputs lg">
-    
+
                                 <div class="input-g mb-0">
                                     <label for="" class="main-label">أضف كود الخصم</label>
                                     <div class="main-input">
@@ -398,49 +409,49 @@
                                         <button type="button" class="main-btn blue up">تأكيد</button>
                                     </div>
                                 </div>
-    
+
                             </div>
-    
+
                         </div>
-    
+
                     </div>
-    
+
                     <!-- Order summary -->
                     <div class="col-lg-6">
                         <div class="card-style">
                             <div class="main-card-title">ملخص الطلب</div>
                             <div class="card-content">
-    
+
                                 <div class="summary-items">
-    
+
                                     <div class="summary-item">
                                         <span class="first">قيمة المنتجات</span>
                                         <span class="second">150 ر.س</span>
                                     </div>
-    
+
                                     <div class="summary-item">
                                         <span class="first">قيمة الخصم</span>
                                         <span class="second">150 ر.س</span>
                                     </div>
-    
+
                                     <div class="summary-item total">
                                         <span class="first">الإجمالي</span>
                                         <span class="second">150 ر.س</span>
                                     </div>
-    
+
                                 </div>
-    
+
                             </div>
                         </div>
                     </div>
-    
+
                 </div>
-    
+
             </div>
-    
+
         </div>
-    
-    
+
+
         <!-- Buttons -->
         <div class="cart-buttons-con bg-white sec-padding">
             <div class="container">
@@ -450,7 +461,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="bg-light sec-padding"></div>
 
     </form>
@@ -582,6 +593,20 @@
     <script src="./assets/plugins/FancyBox/jquery.fancybox.min.js"></script>
     <!-- FlatPicker -->
     <script src="./assets/plugins/FlatPicker/flatpickr.js"></script>
+
+    <!-- Show And Hide Section -->
+    <script>
+        $('.inputs').hide();
+        $('.payment-input').on('change', function () {
+            let dataBank = $(this).attr('data-bank');
+            dataBank ? $('.inputs').slideDown() : $('.inputs').slideUp()
+        });
+
+        $('#uploadPdf').on('change', function (e) {
+            $('#pdf').html(e.target.files[0].name)
+        });
+    </script>
+
 
     <!-- Main Js -->
     <script src="./assets/js/main.js"></script>

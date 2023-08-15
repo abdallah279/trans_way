@@ -18,9 +18,12 @@
       height: 0;
       overflow: hidden;
       margin-top: 0;
-
+      // pointer-event: none;
+      pointer-events: none;
+      
       @media screen and (max-width:$screen-lg) {
         opacity: 1;
+        pointer-events: auto;
       }
     }
   }
@@ -335,9 +338,9 @@
             width: calc(100% + 20px);
             height: calc(100% + 20px);
             border-radius: 25px;
-            background-color: rgba($color: $main, $alpha: 0.8);
+            background-color: rgba(255, 0, 0, 0.897);
             z-index: -1;
-            animation: pulse 700ms infinite alternate;
+            animation: pulse 600ms infinite alternate;
 
             @media screen and (max-width: $screen-lg) {
               left: unset;
