@@ -296,6 +296,24 @@ input:focus {
   animation: 1.2s progress-bar 0.5s infinite alternate ease-in-out;
 }
 
+.toggle-lang {
+  position: fixed;
+  top: 100px;
+  padding: 7px 25px;
+  border-radius: 25px;
+  background-color: #2898c6;
+  color: #fff;
+  border: 1px solid #2898c6;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+html[lang=en] .toggle-lang {
+  right: 20px;
+}
+html[lang=ar] .toggle-lang {
+  left: 20px;
+}
+
 .main-search {
   width: 100%;
   height: 48px;
@@ -961,13 +979,23 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 }
 .main-title::before {
   bottom: -11px;
-  right: -10px;
   background-color: #2898c6;
+}
+html[lang=en] .main-title::before {
+  left: -10px;
+}
+html[lang=ar] .main-title::before {
+  right: -10px;
 }
 .main-title::after {
   bottom: -17px;
-  left: -10px;
   background-color: #E6C145;
+}
+html[lang=en] .main-title::after {
+  right: -10px;
+}
+html[lang=ar] .main-title::after {
+  left: -10px;
 }
 @media screen and (max-width: 425px) {
   .main-title {
@@ -986,7 +1014,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   position: absolute;
   content: "";
   top: 50%;
-  left: 50%;
+  left: 50% !important;
   transform: translate(-50%, -50%);
   width: calc(100% + 20px);
   height: calc(100% + 20px);
@@ -994,7 +1022,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   background-color: rgba(255, 0, 0, 0.897);
   z-index: -1;
   animation: pulse 600ms infinite alternate;
-  right: unset;
+  right: unset !important;
 }
 .offers::after {
   display: none;
@@ -1284,10 +1312,15 @@ html[lang=ar] .product-btn .cart-item {
 }
 .product-btn.sendtocart .cart-item {
   display: block;
+}
+html[lang=en] .product-btn.sendtocart .cart-item {
+  animation: xAxisEn 1s forwards cubic-bezier(1, 0.44, 0.84, 0.165);
+}
+html[lang=ar] .product-btn.sendtocart .cart-item {
   animation: xAxis 1s forwards cubic-bezier(1, 0.44, 0.84, 0.165);
 }
 .product-btn.sendtocart .cart-item:before {
-  animation: yAxis 1s alternate forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: yAxis 1s alternate forwards cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
 }
 
 @keyframes xAxis {
@@ -1295,7 +1328,16 @@ html[lang=ar] .product-btn .cart-item {
     opacity: 1;
   }
   100% {
-    transform: translateX(calc(-50vw - 105px));
+    transform: translateX(calc(-60vw - 105px));
+    opacity: 1;
+  }
+}
+@keyframes xAxisEn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(60vw + 105px));
     opacity: 1;
   }
 }
@@ -1661,19 +1703,34 @@ html[lang=ar] .product-btn .cart-item {
 .login-img {
   position: absolute;
   top: 80px;
-  left: 100px;
   max-width: 100px;
   z-index: -1;
+}
+html[lang=en] .login-img {
+  right: 100px;
+}
+html[lang=ar] .login-img {
+  left: 100px;
 }
 @media screen and (max-width: 992px) {
   .login-img {
     top: 40px;
+  }
+  html[lang=en] .login-img {
+    right: 30px;
+  }
+  html[lang=ar] .login-img {
     left: 30px;
   }
 }
 @media screen and (max-width: 425px) {
   .login-img {
     top: 20px;
+  }
+  html[lang=en] .login-img {
+    right: 10px;
+  }
+  html[lang=ar] .login-img {
     left: 10px;
   }
 }
@@ -1681,19 +1738,34 @@ html[lang=ar] .product-btn .cart-item {
 .login-img2 {
   position: absolute;
   bottom: 80px;
-  right: 100px;
   max-width: 100px;
   z-index: -1;
+}
+html[lang=en] .login-img2 {
+  left: 100px;
+}
+html[lang=ar] .login-img2 {
+  right: 100px;
 }
 @media screen and (max-width: 992px) {
   .login-img2 {
     bottom: 40px;
+  }
+  html[lang=en] .login-img2 {
+    left: 30px;
+  }
+  html[lang=ar] .login-img2 {
     right: 30px;
   }
 }
 @media screen and (max-width: 425px) {
   .login-img2 {
     bottom: 20px;
+  }
+  html[lang=en] .login-img2 {
+    left: 10px;
+  }
+  html[lang=ar] .login-img2 {
     right: 10px;
   }
 }
@@ -3564,6 +3636,7 @@ html[lang=ar] .pagination .page-item:last-child .page-link {
   cursor: pointer;
   position: relative;
   flex-shrink: 0;
+  color: #fff;
 }
 .page-header .header-content .nav-ic .ic {
   max-width: 20px;
@@ -4096,6 +4169,9 @@ html[lang=ar] .footer .foot-content .footer-links .link:hover {
   max-width: 90px;
   max-height: 90px;
 }
+html[lang=en] .banner-container .banner-item .banner-ic {
+  transform: rotate(180deg);
+}
 @media screen and (max-width: 1200px) {
   .banner-container .banner-item .banner-ic {
     max-width: 55px;
@@ -4165,6 +4241,10 @@ html[lang=ar] .cards-slider .owl-nav {
   overflow: hidden;
   z-index: 1;
   transition: all 0.3s ease;
+}
+html[lang=en] .cards-slider .owl-prev,
+html[lang=en] .cards-slider .owl-next {
+  transform: rotateY(180deg);
 }
 .cards-slider .owl-prev:hover,
 .cards-slider .owl-next:hover {
@@ -4301,10 +4381,15 @@ html[lang=ar] .product-card:hover::after {
 .about-sec .bg_sec2 {
   position: absolute;
   top: -20px;
-  left: 0;
   width: 80px;
   height: 80px;
   z-index: 1;
+}
+html[lang=en] .about-sec .bg_sec2 {
+  right: 0;
+}
+html[lang=ar] .about-sec .bg_sec2 {
+  left: 0;
 }
 @media screen and (max-width: 768px) {
   .about-sec .bg_sec2 {

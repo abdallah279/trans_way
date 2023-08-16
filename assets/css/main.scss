@@ -107,6 +107,10 @@
       max-width: 90px;
       max-height: 90px;
 
+      #{$ltr} & {
+        transform: rotate(180deg);
+      }
+
       @media screen and (max-width: $screen-lg2) {
         max-width: 55px;
       }
@@ -168,6 +172,10 @@
     overflow: hidden;
     z-index: 1;
     transition: $main-transition;
+
+    #{$ltr} & {
+      transform: rotateY(180deg)
+    }
 
     &:hover {
       color: $main !important;
@@ -307,7 +315,8 @@
   .bg_sec2 {
     position: absolute;
     top: -20px;
-    left: 0;
+    // left: 0;
+    @include dir-right(0);
     width: 80px;
     height: 80px;
     z-index: 1;
